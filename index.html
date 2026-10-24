@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Game Engine (UGE) | QuantumPulse</title>
+    <meta name="description" content="Ultimate Game Engine (UGE) - A high-performance, native C++ 3D game engine and editor featuring real-time rendering, custom dockable workspace, and visual node graphing. Built by QuantumPulse.">
+    <meta name="keywords" content="Ultimate Game Engine, UGE, C++ Game Engine, Game Engine Architecture, Visual Scripting, DirectX, Vulkan, ImGui, QuantumPulse, Indie Game Dev">
+    <meta name="author" content="QuantumPulse">
+
+    <!-- OpenGraph / Social Media Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ultimate Game Engine (UGE) | QuantumPulse">
+    <meta property="og:description" content="Next-gen native C++ 3D game engine with custom editor, high-speed viewport, and visual node graph system. Built from first principles.">
+    <meta property="og:url" content="https://quantumpulse.dev/uge">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ultimate Game Engine (UGE) | QuantumPulse">
+    <meta name="twitter:description" content="Next-gen native C++ 3D game engine with custom editor, high-speed viewport, and visual node graph system. Built from first principles.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Canvas Grid & Particles -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <div class="brand-pulse-icon">
+                    <span class="core-dot"></span>
+                    <span class="wave"></span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">QuantumPulse</span>
+                    <span class="brand-sub">UGE LABS</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#features">Architecture</a>
+                <a href="#editor-showcase">Editor</a>
+                <a href="#node-sandbox">Visual Scripting</a>
+                <a href="#tech-specs">Tech Specs</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#quantum-ecosystem">Ecosystem</a>
+            </nav>
+
+            <div class="nav-actions">
+                <span class="badge-dev"><span class="pulse-status"></span> Active Build v0.1</span>
+                <a href="https://github.com/pappuvirinchi-lang" target="_blank" class="btn btn-nav">GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="container hero-content">
+            <div class="hero-tag">
+                <span class="pulse-indicator"></span> Next-Generation Native C++ Engine
+            </div>
+            <h1 class="hero-title">
+                Engineered for Raw Speed.<br>
+                <span class="gradient-text">Built From First Principles.</span>
+            </h1>
+            <p class="hero-desc">
+                <strong>Ultimate Game Engine (UGE)</strong> is an uncompromising native C++ 3D engine and dockable editor suite. Designed for extreme runtime performance, real-time shader pipelines, and integrated visual node scripting without the bloat of legacy frameworks.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#node-sandbox" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg>
+                    Test Visual Node Sandbox
+                </a>
+                <a href="#editor-showcase" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M14 9h7"/><path d="M14 15h7"/></svg>
+                    Explore The Editor
+                </a>
+            </div>
+
+            <!-- Live Engine Terminal Preview -->
+            <div class="engine-telemetry-banner">
+                <div class="telemetry-item">
+                    <span class="label">CORE ARCHITECTURE</span>
+                    <span class="value">Modern C++20 / CMake</span>
+                </div>
+                <div class="telemetry-divider"></div>
+                <div class="telemetry-item">
+                    <span class="label">RENDER PIPELINE</span>
+                    <span class="value">High-Throughput RHI & HLSL</span>
+                </div>
+                <div class="telemetry-divider"></div>
+                <div class="telemetry-item">
+                    <span class="label">VISUAL SCRIPTING</span>
+                    <span class="value">Graph Node Runtime</span>
+                </div>
+                <div class="telemetry-divider"></div>
+                <div class="telemetry-item">
+                    <span class="label">TARGET PLATFORMS</span>
+                    <span class="value">Win64 Native (DirectX/Vulkan)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Grid -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">ENGINE FOUNDATION</div>
+                <h2>High-Performance Native Pipeline</h2>
+                <p>UGE strips away layers of runtime baggage to give developers direct hardware control and crystal-clear memory predictability.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon icon-cyan">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <h3>Native C++ Engine Core</h3>
+                    <p>Zero garbage collection pauses, low-level memory control, and minimal binary overhead. Built from scratch with clean modular CMake targets.</p>
+                    <ul class="feature-checklist">
+                        <li>Deterministic tick execution</li>
+                        <li>High-throughput multi-core architecture</li>
+                        <li>Clean separation of Core, Engine, and Editor modules</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon icon-purple">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Dockable Studio Editor</h3>
+                    <p>Modern studio interface featuring seamless panel docking, real-time scene hierarchy, transform gizmos, asset browsers, and instant inspector feedback.</p>
+                    <ul class="feature-checklist">
+                        <li>Fully custom multi-docking layouts</li>
+                        <li>Real-time entity transform inspection</li>
+                        <li>Integrated logger, console, and performance profiler</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon icon-blue">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    </div>
+                    <h3>Visual Blueprint Node Graph</h3>
+                    <p>Build game logic, math operations, and state flow using intuitive node graphs. Features type-safe pin connections, searchable node palette, and instant compilation.</p>
+                    <ul class="feature-checklist">
+                        <li>Live typed pin validation (Exec, Float, Vector, Entity)</li>
+                        <li>Instant keyboard typing node palette search</li>
+                        <li>Real-time visual node execution & debugging</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon icon-magenta">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Modern 3D Render Hardware Interface (RHI)</h3>
+                    <p>Abstracted graphics backend ready for HLSL/GLSL shaders, custom mesh batching, environment lighting, and high-frequency camera matrices.</p>
+                    <ul class="feature-checklist">
+                        <li>Dynamic vertex/index buffer management</li>
+                        <li>Custom shader reflection & pipeline states</li>
+                        <li>Optimized editor camera with smooth flight control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editor Showcase Simulation -->
+    <section id="editor-showcase" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">STUDIO WORKSPACE</div>
+                <h2>The UGE Creator Suite</h2>
+                <p>Engineered for fluid, intuitive game composition. Inspect the architecture of the custom editor.</p>
+            </div>
+
+            <div class="mockup-window glass-panel">
+                <div class="mockup-header">
+                    <div class="window-controls">
+                        <span class="control red"></span>
+                        <span class="control yellow"></span>
+                        <span class="control green"></span>
+                    </div>
+                    <div class="window-title">Ultimate Game Engine v0.1 — [Project: QuantumRealm]</div>
+                    <div class="window-status">FPS: 144.2 | Frametime: 6.93ms | Draw Calls: 48</div>
+                </div>
+
+                <div class="editor-interface-grid">
+                    <!-- Scene Outliner -->
+                    <div class="editor-pane outliner-pane">
+                        <div class="pane-title">Scene Hierarchy</div>
+                        <div class="tree-list">
+                            <div class="tree-item active"><span class="tree-icon">🌐</span> MainScene</div>
+                            <div class="tree-item indent-1"><span class="tree-icon">☀️</span> DirectionalLight_Sun</div>
+                            <div class="tree-item indent-1"><span class="tree-icon">📷</span> EditorCamera_Main</div>
+                            <div class="tree-item indent-1 selected"><span class="tree-icon">📦</span> QuantumCore_Actor</div>
+                            <div class="tree-item indent-2"><span class="tree-icon">⚡</span> BlueprintGraphComponent</div>
+                            <div class="tree-item indent-2"><span class="tree-icon">🔷</span> MeshRenderer (HighPoly)</div>
+                            <div class="tree-item indent-1"><span class="tree-icon">🌫️</span> AtmosphericFog</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Viewport Mockup -->
+                    <div class="editor-pane viewport-pane">
+                        <div class="pane-title">3D Viewport — Real-Time Shaded [Lit]</div>
+                        <div class="viewport-canvas-mock">
+                            <div class="viewport-hud-top">
+                                <span class="hud-pill">Perspective</span>
+                                <span class="hud-pill">Lit</span>
+                                <span class="hud-pill">Show: All</span>
+                            </div>
+                            
+                            <!-- 3D Geometric Representation -->
+                            <div class="viewport-3d-scene">
+                                <div class="wireframe-cube">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                    <div class="gizmo-axes">
+                                        <div class="axis x">X</div>
+                                        <div class="axis y">Y</div>
+                                        <div class="axis z">Z</div>
+                                    </div>
+                                </div>
+                                <div class="ground-grid"></div>
+                            </div>
+
+                            <div class="viewport-hud-bottom">
+                                <span>Cam Pos: [0.0, 3.5, -8.2]</span>
+                                <span>Speed: 1.0x</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Details Inspector -->
+                    <div class="editor-pane details-pane">
+                        <div class="pane-title">Details: QuantumCore_Actor</div>
+                        <div class="details-content">
+                            <div class="detail-group">
+                                <div class="detail-group-title">TRANSFORM</div>
+                                <div class="transform-row">
+                                    <span class="coord-label x-label">X</span><input type="text" value="0.000" readonly>
+                                    <span class="coord-label y-label">Y</span><input type="text" value="1.250" readonly>
+                                    <span class="coord-label z-label">Z</span><input type="text" value="0.000" readonly>
+                                </div>
+                                <div class="transform-row">
+                                    <span class="coord-label x-label">RX</span><input type="text" value="0.00" readonly>
+                                    <span class="coord-label y-label">RY</span><input type="text" value="45.00" readonly>
+                                    <span class="coord-label z-label">RZ</span><input type="text" value="0.00" readonly>
+                                </div>
+                            </div>
+                            <div class="detail-group">
+                                <div class="detail-group-title">BLUEPRINT SCRIPT</div>
+                                <div class="prop-row">
+                                    <span>Script Graph:</span>
+                                    <span class="prop-badge">CorePulse_Graph.uge</span>
+                                </div>
+                                <div class="prop-row">
+                                    <span>Tick Mode:</span>
+                                    <span class="prop-val">OnUpdate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Visual Node Sandbox -->
+    <section id="node-sandbox" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">LIVE INTERACTIVE DEMO</div>
+                <h2>Test UGE Visual Node Scripting</h2>
+                <p>Experience how UGE connects logic nodes. Drag the nodes around and inspect the active graph execution!</p>
+            </div>
+
+            <div class="node-sandbox-container glass-panel">
+                <div class="sandbox-toolbar">
+                    <div class="sandbox-meta">
+                        <span class="status-dot"></span>
+                        <span>Interactive Node Graph Canvas</span>
+                    </div>
+                    <div class="sandbox-instructions">
+                        <span>💡 Drag nodes to rearrange • Hover pins to inspect data flow</span>
+                    </div>
+                    <button id="reset-nodes-btn" class="btn btn-sm">Reset Layout</button>
+                </div>
+
+                <div id="graph-canvas-area" class="graph-canvas-area">
+                    <svg id="connections-svg" class="connections-svg"></svg>
+
+                    <!-- Node 1: Event Tick -->
+                    <div class="graph-node" id="node-tick" style="left: 60px; top: 120px;">
+                        <div class="node-header header-event">
+                            <span class="node-type-icon">⚡</span>
+                            <span class="node-title">Event Tick</span>
+                        </div>
+                        <div class="node-body">
+                            <div class="node-row justify-end">
+                                <span class="pin-label">Exec</span>
+                                <div class="pin pin-exec pin-out" data-pin-id="tick-exec"></div>
+                            </div>
+                            <div class="node-row justify-end">
+                                <span class="pin-label">DeltaTime</span>
+                                <div class="pin pin-float pin-out" data-pin-id="tick-delta"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 2: Math Multiply -->
+                    <div class="graph-node" id="node-math" style="left: 320px; top: 160px;">
+                        <div class="node-header header-math">
+                            <span class="node-type-icon">✖</span>
+                            <span class="node-title">Float Multiply</span>
+                        </div>
+                        <div class="node-body">
+                            <div class="node-row">
+                                <div class="pin pin-float pin-in" data-pin-id="mult-in-a"></div>
+                                <span class="pin-label">A</span>
+                                <span class="pin-label flex-spacer"></span>
+                                <span class="pin-label">Result</span>
+                                <div class="pin pin-float pin-out" data-pin-id="mult-out"></div>
+                            </div>
+                            <div class="node-row">
+                                <div class="pin pin-float pin-in" data-pin-id="mult-in-b"></div>
+                                <span class="pin-label">Speed: 45.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 3: Add Rotation -->
+                    <div class="graph-node" id="node-rotate" style="left: 580px; top: 100px;">
+                        <div class="node-header header-action">
+                            <span class="node-type-icon">🔄</span>
+                            <span class="node-title">Add Local Rotation</span>
+                        </div>
+                        <div class="node-body">
+                            <div class="node-row">
+                                <div class="pin pin-exec pin-in" data-pin-id="rot-exec-in"></div>
+                                <span class="pin-label">Exec</span>
+                                <span class="pin-label flex-spacer"></span>
+                                <span class="pin-label">Done</span>
+                                <div class="pin pin-exec pin-out" data-pin-id="rot-exec-out"></div>
+                            </div>
+                            <div class="node-row">
+                                <div class="pin pin-float pin-in" data-pin-id="rot-degrees-y"></div>
+                                <span class="pin-label">Delta Rotation Y (deg)</span>
+                            </div>
+                            <div class="node-row">
+                                <div class="pin pin-entity pin-in" data-pin-id="rot-target"></div>
+                                <span class="pin-label">Target: Self [Actor]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sandbox-footer">
+                    <span class="badge-tag">Graph State: Compiling & Executing in Real Time</span>
+                    <span class="code-font text-muted">NodeGraphRuntime::Tick(float DeltaSeconds) -> OK</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section id="tech-specs" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">ENGINE ARCHITECTURE</div>
+                <h2>Technical Specifications</h2>
+                <p>Designed with clean software engineering patterns for maximum readability and speed.</p>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card glass-panel">
+                    <span class="spec-num">01</span>
+                    <h4>Core & Build System</h4>
+                    <p>Standardized on Modern C++20 with CMake build pipelines. Fast compilation, zero non-essential external bloat, and automated developer certificate tooling.</p>
+                    <div class="spec-code-tag">CMake 3.20+ • C++20 • MSVC/Clang</div>
+                </div>
+
+                <div class="spec-card glass-panel">
+                    <span class="spec-num">02</span>
+                    <h4>Graphics Hardware Interface (RHI)</h4>
+                    <p>Clean rendering abstractions with support for dynamic HLSL shaders, standard 3D pipeline states, vertex/index staging, and multi-mesh rendering.</p>
+                    <div class="spec-code-tag">Direct3D / Vulkan • HLSL Shaders</div>
+                </div>
+
+                <div class="spec-card glass-panel">
+                    <span class="spec-num">03</span>
+                    <h4>Visual Blueprint Architecture</h4>
+                    <p>Integrated node execution VM with fast data-pin serialization, type deduction, custom pin drawing, and searchable node discovery for fast logic prototyping.</p>
+                    <div class="spec-code-tag">GraphVM • Pin-Typing • Real-time Introspection</div>
+                </div>
+
+                <div class="spec-card glass-panel">
+                    <span class="spec-num">04</span>
+                    <h4>Asset & Scene Management</h4>
+                    <p>Hierarchical entity transform systems, integrated editor camera raycasting, and fast asset streaming for textures and standard 3D mesh formats.</p>
+                    <div class="spec-code-tag">Transform Hierarchy • Texture & Mesh IO</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Development Roadmap -->
+    <section id="roadmap" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">PROGRESSION</div>
+                <h2>Engine Development Roadmap</h2>
+                <p>Follow along with our milestones as QuantumPulse pushes UGE towards an open alpha release.</p>
+            </div>
+
+            <div class="roadmap-timeline">
+                <div class="timeline-step completed">
+                    <div class="step-marker">
+                        <span class="check-icon">✓</span>
+                    </div>
+                    <div class="step-card glass-panel">
+                        <div class="step-header">
+                            <span class="phase-badge done">PHASE 1 - COMPLETED</span>
+                            <span class="step-date">Current Milestone</span>
+                        </div>
+                        <h3>Engine Core & Dockable Editor</h3>
+                        <p>Established the native C++ project framework, high-throughput viewport rendering, camera flight navigation, dockable UI layout, and Windows code signing workflow.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step active">
+                    <div class="step-marker">
+                        <span class="pulse-marker"></span>
+                    </div>
+                    <div class="step-card glass-panel highlight-border">
+                        <div class="step-header">
+                            <span class="phase-badge in-progress">PHASE 2 - IN PROGRESS</span>
+                            <span class="step-date">Active Development</span>
+                        </div>
+                        <h3>Visual Node Graph & Logic VM</h3>
+                        <p>Expanding the visual scripting system: keyboard node search palette, type-safe execution pins, entity variables, and real-time node graphing execution in the editor.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step upcoming">
+                    <div class="step-marker">
+                        <span class="step-dot"></span>
+                    </div>
+                    <div class="step-card glass-panel">
+                        <div class="step-header">
+                            <span class="phase-badge queued">PHASE 3 - QUEUED</span>
+                            <span class="step-date">Next Milestone</span>
+                        </div>
+                        <h3>Physics, Audio & Material Pipelines</h3>
+                        <p>Integration of 3D rigid-body collision dynamics, spatial audio mixing, material graph shader editor, and game packaging/export pipeline.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step upcoming">
+                    <div class="step-marker">
+                        <span class="step-dot"></span>
+                    </div>
+                    <div class="step-card glass-panel">
+                        <div class="step-header">
+                            <span class="phase-badge queued">PHASE 4 - FUTURE</span>
+                            <span class="step-date">Target Release</span>
+                        </div>
+                        <h3>Public Alpha & Developer SDK</h3>
+                        <p>Community binary releases, comprehensive API documentation, sample game templates, and full open-source developer tooling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QuantumPulse Ecosystem Banner -->
+    <section id="quantum-ecosystem" class="section section-dark">
+        <div class="container">
+            <div class="ecosystem-banner glass-panel">
+                <div class="eco-brand-badge">
+                    <span class="eco-pulse"></span> QUANTUMPULSE LABS
+                </div>
+                <h2>Explore The QuantumPulse Universe</h2>
+                <p>We push boundaries across native game engines, physics-informed neural AI, and scientific simulation software.</p>
+
+                <div class="ecosystem-cards-grid">
+                    <div class="eco-card">
+                        <div class="eco-card-tag">FLAGSHIP SIMULATION</div>
+                        <h4>Ultimate Chemistry Simulator</h4>
+                        <p>Real-time 3D VSEPR auto-relaxation, offline AI reaction prediction, and neural voice synthesis in Unreal Engine 5.</p>
+                        <div class="eco-links">
+                            <a href="https://pappuvirinchi-lang.github.io/ultimate-chemistry-sim/" target="_blank" class="eco-link">Website ↗</a>
+                            <a href="https://virinchi9.itch.io/ultimate-chemistry-simulator" target="_blank" class="eco-link">Itch.io ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="eco-card active-card">
+                        <div class="eco-card-tag">GAME ENGINE</div>
+                        <h4>Ultimate Game Engine (UGE)</h4>
+                        <p>Next-gen native C++ 3D game engine and dockable editor featuring real-time visual node scripting.</p>
+                        <div class="eco-links">
+                            <span class="eco-link current">You are here</span>
+                        </div>
+                    </div>
+
+                    <div class="eco-card">
+                        <div class="eco-card-tag">TACTICAL COMBAT</div>
+                        <h4>Chemistry Warfare</h4>
+                        <p>Advanced chemical warfare and elemental combat game mechanics powered by accurate reaction kinetics.</p>
+                        <div class="eco-links">
+                            <span class="eco-link disabled">In Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="brand">
+                    <div class="brand-pulse-icon">
+                        <span class="core-dot"></span>
+                        <span class="wave"></span>
+                    </div>
+                    <span class="brand-name">QuantumPulse</span>
+                </div>
+                <p class="footer-copy">
+                    Engineered with passion by QuantumPulse. Building high-performance software from first principles.
+                </p>
+            </div>
+
+            <div class="footer-links-group">
+                <div class="footer-col">
+                    <span class="col-title">Engine</span>
+                    <a href="#features">Architecture</a>
+                    <a href="#editor-showcase">Editor</a>
+                    <a href="#node-sandbox">Visual Scripting</a>
+                    <a href="#roadmap">Roadmap</a>
+                </div>
+                <div class="footer-col">
+                    <span class="col-title">QuantumPulse</span>
+                    <a href="https://pappuvirinchi-lang.github.io/ultimate-chemistry-sim/" target="_blank">Chemistry Sim</a>
+                    <a href="https://virinchi9.itch.io/ultimate-chemistry-simulator" target="_blank">Itch.io</a>
+                    <a href="https://github.com/pappuvirinchi-lang" target="_blank">GitHub Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-row">
+                <span>&copy; 2026 QuantumPulse. All rights reserved.</span>
+                <span>Ultimate Game Engine (UGE)</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
